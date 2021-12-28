@@ -21,3 +21,15 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+bootBuildImage {
+	imageName = "shailyaggarwal/gh-actions-docker:latest"
+	publish = true
+	docker {
+		publishRegistry {
+			url = "https://registry-1.docker.io/v2/"
+			username = $DOCKER_USERNAME
+			password = $DOCKER_PASSWORD
+		}
+	}
+}
