@@ -28,8 +28,8 @@ bootBuildImage {
 	docker {
 		publishRegistry {
 			url = "https://registry-1.docker.io/v2/"
-			username = $DOCKER_USERNAME
-			password = $DOCKER_PASSWORD
+			username = System.getenv('DOCKER_USERNAME')
+			password = System.getenv('DOCKER_PASSWORD')
 		}
 	}
 }
