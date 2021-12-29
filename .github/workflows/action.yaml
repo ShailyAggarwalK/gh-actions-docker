@@ -1,11 +1,15 @@
 name: CI
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
   workflow_dispatch:
+
+env:
+  USERNAME: ${{ secrets.USERNAME }}
+  PWD: ${{ secrets.PWD }}
 
 jobs:
   build:
@@ -17,8 +21,6 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PWD: ${{ secrets.PWD }}
         with:
           arguments: bootBuildImage
 
