@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  PSWD: ${{ secrets.PWD }}
+  USERNAME: ${{ secrets.USERNAME }}
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
-          USERNAME: ${{ secrets.USERNAME }}
+          PSWD: ${{ secrets.PWD }}
         with:
           arguments: bootBuildImage
       - name: Echo Username
