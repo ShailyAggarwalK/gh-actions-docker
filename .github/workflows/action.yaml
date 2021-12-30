@@ -7,9 +7,8 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-env:
-  USERNAME: ${{ secrets.USERNAME }}
-  PWD: ${{ secrets.PWD }}
+  env:
+    PSWD: ${{ secrets.PWD }}
 
 jobs:
   build:
@@ -21,6 +20,13 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
+          USERNAME: ${{ secrets.USERNAME }}
         with:
           arguments: bootBuildImage
+      - name: Some Echoing
+        shell: bash
+        run : |
+          echo $USERNAME
+          echo $PSWD
+          echo $GITHUB_CONTEXT
 
