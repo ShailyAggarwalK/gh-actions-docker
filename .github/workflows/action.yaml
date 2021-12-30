@@ -23,10 +23,16 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
         with:
           arguments: bootBuildImage
-      - name: Some Echoing
+      - name: Echo Username
         shell: bash
         run : |
           echo $USERNAME
+      - name: Echo Pswd
+        shell: bash
+        run : |
           echo $PSWD
+      - name: Echo Github Context
+        shell: bash
+        run : |
           echo $GITHUB_CONTEXT
 
