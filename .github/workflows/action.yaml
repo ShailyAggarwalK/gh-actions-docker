@@ -29,8 +29,9 @@ jobs:
           UNAME: ${{ secrets.USERNAME }}
           PSWRD: ${{ secrets.PWD }}
         with:
-          file: ./Dockerfile
+          context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gh-actions-docker:latest
           secrets: |
-            "USERNAME= ${{ secrets.USERNAME }}"
+            "username= ${{ secrets.USERNAME }}"
