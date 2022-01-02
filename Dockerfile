@@ -1,7 +1,5 @@
 FROM openjdk
-ADD ./build/libs/gh-actions-docker.jar /
-ARG UNAME
-ARG PSWRD
+ADD gh-actions-docker.jar /
 ENV USERNAME=$UNAME
 ENV PSWD=$PSWRD
 ENV ABC="abcd"
