@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+  ghActionsDocker:
+    image: shailyaggarwal/gh-actions-docker:latest
+    secrets:
+      - uname
+      - pswrd
+    environment:
+      UNAME: /run/secrets/uname
+      PSWRD: /run/secrets/pswrd
+
+secrets:
+  uname:
+    file: ./uname.txt
+  pswrd:
+    file: ./pswrd.txt
