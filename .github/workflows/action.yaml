@@ -29,6 +29,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gh-actions-docker:latest
-          secrets: |
-            "UNAME=${{ secrets.USERNAME }}"
-            "PSWRD=${{ secrets.PWD }}"
+          build-args: |
+            UNAME= ${{ secrets.USERNAME }}
+            PSWRD= ${{ secrets.PWD }}
