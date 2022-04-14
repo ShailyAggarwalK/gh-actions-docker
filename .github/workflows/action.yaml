@@ -18,6 +18,9 @@ jobs:
         with:
           env_UNAME: ${{ secrets.USERNAME }}
           env_PSWRD: ${{ secrets.PWD }}
+          directory: env
+          file_name: .environment
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to Docker Hub
