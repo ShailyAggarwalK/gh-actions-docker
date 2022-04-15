@@ -16,13 +16,16 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
+          envKey_management.endpoints.web.exposure.include: env,health
           envkey_UNAME: ${{ secrets.USERNAME }}
           envkey_PSWRD: ${{ secrets.PWD }}
+          file_name: application.properties
+          directory: ./config/
 
       - name: Test env file
         run: |
           echo "HELLO"
-          echo "$(cat .env)"
+          echo "$(ls -a)"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
