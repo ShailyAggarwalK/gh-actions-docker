@@ -17,8 +17,8 @@ jobs:
         uses: SpicyPizza/create-envfile@v1.3
         with:
           envkey_SOME_API_KEY: "123456abcdef"
-          env_UNAME: ${{ secrets.USERNAME }}
-          env_PSWRD: ${{ secrets.PWD }}
+          envkey_UNAME: ${{ secrets.USERNAME }}
+          envkey_PSWRD: ${{ secrets.PWD }}
           file_name: .env
 
       - name: test env file
