@@ -21,6 +21,7 @@ jobs:
 
       - name: test env file
         run: |
+          echo "HELLO"
           echo "$(cat .env)"
 
       - name: Set up Docker Buildx
