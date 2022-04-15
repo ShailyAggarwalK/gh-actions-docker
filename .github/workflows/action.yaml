@@ -14,14 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Test env file
+      - name: make config directory
         run: |
           mkdir config
 
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          envKey_management.endpoints.web.exposure.include: env,health
           envkey_UNAME: ${{ secrets.USERNAME }}
           envkey_PSWRD: ${{ secrets.PWD }}
           file_name: application.properties
