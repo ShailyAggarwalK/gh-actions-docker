@@ -18,8 +18,10 @@ jobs:
         with:
           env_UNAME: ${{ secrets.USERNAME }}
           env_PSWRD: ${{ secrets.PWD }}
-          directory: ../
-          file_name: a
+
+      - name: test env file
+        run: |
+          echo "$(cat .env)"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
