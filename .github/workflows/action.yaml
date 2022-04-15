@@ -30,7 +30,7 @@ jobs:
       - name: Test env file
         run: |
           echo "HELLO"
-          echo "$(ls -a)"
+          echo "$(cat config/application.properties)"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
