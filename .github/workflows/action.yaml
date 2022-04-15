@@ -26,6 +26,7 @@ jobs:
           echo "HELLO"
           echo "$(cat .env)"
           echo "$(pwd)"
+          echo "$(ls -a)"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
