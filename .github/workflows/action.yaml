@@ -14,21 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: make config directory
-        run: |
-          mkdir config
-
-      - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_UNAME: ${{ secrets.USERNAME }}
-          envkey_PSWRD: ${{ secrets.PWD }}
-          file_name: application.properties
-          directory: ./config/
-
-      - name: Test env file
-        run: |
-          echo "$(cat config/application.properties)"
+      - name: Set Env
+        env:
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
