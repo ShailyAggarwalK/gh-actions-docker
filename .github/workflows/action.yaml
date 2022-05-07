@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set Env
+        run: echo ""
         env:
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
