@@ -28,7 +28,6 @@ jobs:
 
       - name: Test env file
         run: |
-          echo "HELLO"
           echo "$(cat config/application.properties)"
 
       - name: Set up Docker Buildx
